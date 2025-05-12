@@ -1,0 +1,15 @@
+spring.application.name=demo-rabbit-publish
+
+spring.jpa.hibernate.ddl-auto=update
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/newsdb
+spring.datasource.username=POSTGRESS_USER_NAME
+spring.datasource.password=POSTGRESS_USER_PASSWORD
+
+
+spring.rabbitmq.host=localhost
+spring.rabbitmq.username=guest
+spring.rabbitmq.password=guest
+spring.rabbitmq.port=5672
+
+newsitem.queuename=my-queue
