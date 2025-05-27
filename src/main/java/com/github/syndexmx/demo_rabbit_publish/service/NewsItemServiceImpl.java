@@ -25,4 +25,9 @@ public class NewsItemServiceImpl implements NewsItemService {
         return itemRepository.findAll();
     }
 
+    @Override
+    public NewsItem findById(Long id) {
+        return itemRepository.findById(id).orElseThrow();
+    }
+
 }

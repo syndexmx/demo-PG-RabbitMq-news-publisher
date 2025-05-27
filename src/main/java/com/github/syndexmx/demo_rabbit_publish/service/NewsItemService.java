@@ -10,4 +10,5 @@ public interface NewsItemService {
 
     NewsItem saveItem(NewsItem item);
     List<NewsItem> findAll();
+    NewsItem findById(Long id);
 }

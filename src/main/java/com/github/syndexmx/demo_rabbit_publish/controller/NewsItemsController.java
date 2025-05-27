@@ -4,12 +4,10 @@ import com.github.syndexmx.demo_rabbit_publish.controller.dto.NewsItemDto;
 import com.github.syndexmx.demo_rabbit_publish.model.NewsItem;
 import com.github.syndexmx.demo_rabbit_publish.service.NewsItemService;
 import com.github.syndexmx.demo_rabbit_publish.service.MessageSender;
+import jakarta.websocket.server.PathParam;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -40,5 +38,12 @@ public class NewsItemsController {
                 .map(item -> mapItem(item))
                 .toList();
         return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
+    @GetMapping("/api/v0/news-items/{id}")
+    ResponseEntity<NewsItemDto> getOneItem(@PathVariable Long id) {
+        final NewsItem newsItem = newsItemService.findById(id);
+        final NewsItemDto resultItemDto = mapItem(newsItem);
+        return new ResponseEntity<>(resultItemDto, HttpStatus.OK);
     }
 }
