@@ -1,4 +1,4 @@
-package com.github.syndexmx.demo_rabbit_publish.service;
+package com.github.syndexmx.demo_rabbit_publish.service.messageBroker;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

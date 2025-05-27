@@ -2,9 +2,8 @@ package com.github.syndexmx.demo_rabbit_publish.controller;
 
 import com.github.syndexmx.demo_rabbit_publish.controller.dto.NewsItemDto;
 import com.github.syndexmx.demo_rabbit_publish.model.NewsItem;
-import com.github.syndexmx.demo_rabbit_publish.service.NewsItemService;
-import com.github.syndexmx.demo_rabbit_publish.service.MessageSender;
-import jakarta.websocket.server.PathParam;
+import com.github.syndexmx.demo_rabbit_publish.service.domain.NewsItemService;
+import com.github.syndexmx.demo_rabbit_publish.service.messageBroker.MessageSender;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
